@@ -4,7 +4,11 @@
   "description": "TR-069 client simulator for GenieACS",
   "main": "genieacs-sim.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "eslint": "eslint --fix src/*.ts genieacs-sim",
+    "prettier": "prettier --parser typescript --write src/*.ts genieacs-sim",
+    "tsc": "tsc --noEmit",
+    "build": "npm run eslint && npm run prettier && npm run tsc"
   },
   "repository": {
     "type": "git",
@@ -28,5 +32,16 @@
     "commander": "^2.9.0",
     "libxmljs": "^0.18.4"
   },
-  "bin": "./genieacs-sim"
+  "bin": "./genieacs-sim",
+  "devDependencies": {
+    "@types/commander": "^2.12.2",
+    "@types/libxmljs": "^0.18.3",
+    "@typescript-eslint/eslint-plugin": "^1.6.0",
+    "eslint": "^5.16.0",
+    "eslint-config-prettier": "^4.1.0",
+    "esm": "^3.2.22",
+    "prettier": "^1.17.0",
+    "ts-node": "^8.1.0",
+    "typescript": "^3.4.3"
+  }
 }
